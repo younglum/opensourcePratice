@@ -1,1 +1,4 @@
 clone git config등등
+pwd
+-기초 깃 명령어
+fetch pull
