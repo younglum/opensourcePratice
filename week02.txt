@@ -1,0 +1,5 @@
+2주차 수업내용
+기초 리눅스 명령어
+ls,cat,touch
+기초 깃 명령어
+status init add commit config log push
