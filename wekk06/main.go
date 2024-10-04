@@ -13,5 +13,5 @@ func main() {
 
 	//fmt.Print("%d * %f = %f\n", i, f, i*f)
 	fmt.Printf("%d * %f = %f\n", i, f, float64(i)*f)
-	fmt.Println(reflect.TypeOf(i))
+	fmt.Println(reflect.TypeOf(i), reflect.TypeOf(f))
 }
