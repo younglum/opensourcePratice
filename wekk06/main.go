@@ -15,7 +15,7 @@ func main() {
 	var o bool
 	mySchoolAccount := 5.0 //Camelcase 표기법
 	fmt.Println(t, a, o, mySchoolAccount)
-	fmt.Printf("%f %d %t\n", t, a, o)
+	fmt.Printf("%f %d %t\n", t, a, o) //zero value
 	//fmt.Print("value i: %d,value f:%f", i, f)
 	fmt.Printf("value i: %d,value f:%f\n", i, f)
 
@@ -26,7 +26,7 @@ func main() {
 	fmt.Println(c1, c2)
 
 	mySchoolAccount = 2.7
-	c = 3
-	fmt.Print("\n\n", mySchoolAccount > float64(c))
+	c := 3
+	fmt.Print("\n\n", mySchoolAccount > float64(c)) //비교연산 (true/false)
 
 }
