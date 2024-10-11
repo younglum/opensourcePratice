@@ -11,22 +11,20 @@ import (
 
 func main() {
 	in := bufio.NewReader(os.Stdin)
-	fmt.Print("점수를 입력하세요.")
+	fmt.Print("점수를 입력하세요.: ")
 	i, err := in.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
 	}
 	i = strings.TrimSpace(i)                //줄바꿈을 제거, 파이썬의 strip 함수와 비슷
 	score, _ := strconv.ParseInt(i, 10, 32) //10진 정수형(32비트)으로 변환
-	if score >= 60 {
-		status := "passing"
-		fmt.Println(status)
-		fmt.Printf("%d", score)
+	var grade string
+	if score >= 90 {
+		grade = "A"
 	} else {
-		status := "failing"
-		fmt.Println(status)
-		fmt.Printf("%d", score)
+		grade = "BCDE"
 	}
+	fmt.Printf("%d점은 %s등급 입니다.\n", score, grade)
 
 	/*var army string = "우리는 $가와 $민에 충성을 다하는 대한민$ 육군이다."
 	armyFixed := strings.NewReplacer("$", "국")
