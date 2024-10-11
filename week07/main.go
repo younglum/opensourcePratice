@@ -5,16 +5,27 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
 	in := bufio.NewReader(os.Stdin)
-	fmt.Print("이름을 입력하세요.")
-	name, err := in.ReadString('\n')
+	fmt.Print("점수를 입력하세요.")
+	i, err := in.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
+	}
+	i = strings.TrimSpace(i)                //줄바꿈을 제거, 파이썬의 strip 함수와 비슷
+	score, _ := strconv.ParseInt(i, 10, 32) //10진 정수형(32비트)으로 변환
+	if score >= 60 {
+		status := "passing"
+		fmt.Println(status)
+		fmt.Printf("%d", score)
 	} else {
-		fmt.Println(name)
+		status := "failing"
+		fmt.Println(status)
+		fmt.Printf("%d", score)
 	}
 
 	/*var army string = "우리는 $가와 $민에 충성을 다하는 대한민$ 육군이다."
