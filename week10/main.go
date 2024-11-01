@@ -23,7 +23,21 @@ func main() {
 	}
 	//counts := 0
 	var isPrime bool = true //flag변수 , 사용시 가독성과 메모리 용량의 효율성을 챙길 수 있음
-	j := 2
+
+	if n <= 1 { //입력받은 값이 1보다 작거나 같을때 == 1 또는 음수일 때
+		isPrime = false
+	} else {
+		j := 2
+		for j < n {
+			if n%j == 0 {
+				//counts++
+				isPrime = false
+			}
+
+			j++
+		}
+	}
+	/*j := 2
 	for j < n {
 		if n%j == 0 {
 			//counts++
@@ -31,7 +45,7 @@ func main() {
 		}
 
 		j++
-	}
+	}*/
 	if isPrime {
 		//if counts == 0 {
 		fmt.Printf("%d is prime number.", n)
