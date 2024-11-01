@@ -30,11 +30,15 @@ func main() {
 		isPrime = false
 	} else {
 		j := 2
-		for j < int(math.Sqrt(float64(n))) {
+		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				//counts++
 				isPrime = false
 				break
+			} else if n == 2 {
+				isPrime = true
+			} else if n%2 == 0 { //2를 제외한 짝수는 모두 소수가 아님,그래서 짝수일 때 무조건 소수가 아님을 출력
+				isPrime = false
 			}
 			fmt.Printf("%d ", j) //for문의 반복횟수 출력
 			j++
