@@ -32,8 +32,9 @@ func main() {
 			if n%j == 0 {
 				//counts++
 				isPrime = false
+				break
 			}
-
+			fmt.Printf("%d ", j) //for문의 반복횟수 출력
 			j++
 		}
 	}
