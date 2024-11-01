@@ -12,7 +12,7 @@ import (
 func main() {
 	in := bufio.NewReader(os.Stdin)
 	fmt.Print("점수를 입력하세요.: ")
-	i, err := in.ReadString('\n')
+	i, err := in.ReadString('\n') //입력을 문자열로 받음
 	if err != nil {
 		log.Fatal(err)
 	}
