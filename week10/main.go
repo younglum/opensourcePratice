@@ -28,20 +28,21 @@ func main() {
 
 	if n <= 1 { //입력받은 값이 1보다 작거나 같을때 == 1 또는 음수일 때
 		isPrime = false
+	} else if n == 2 {
+		isPrime = true
+	} else if n%2 == 0 { //2를 제외한 짝수는 모두 소수가 아님,그래서 짝수일 때 무조건 소수가 아님을 출력
+		isPrime = false
 	} else {
-		j := 2
-		for j <= int(math.Sqrt(float64(n))) {
+		j := 3
+		//for j <= int(math.Sqrt(float64(n)))
+		for j*j <= n {
 			if n%j == 0 {
 				//counts++
 				isPrime = false
 				break
-			} else if n == 2 {
-				isPrime = true
-			} else if n%2 == 0 { //2를 제외한 짝수는 모두 소수가 아님,그래서 짝수일 때 무조건 소수가 아님을 출력
-				isPrime = false
 			}
 			fmt.Printf("%d ", j) //for문의 반복횟수 출력
-			j++
+			j += 2
 		}
 	}
 	/*j := 2
