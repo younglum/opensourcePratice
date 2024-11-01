@@ -4,12 +4,14 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
 func main() {
+	fmt.Printf("%f\n", math.Sqrt(16.8))
 	in := bufio.NewReader(os.Stdin)
 	fmt.Print("input your number: ")
 	i, err := in.ReadString('\n') //입력을 문자열로 받음
@@ -28,7 +30,7 @@ func main() {
 		isPrime = false
 	} else {
 		j := 2
-		for j < n {
+		for j < int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				//counts++
 				isPrime = false
