@@ -34,7 +34,7 @@ func isPrime(n int) bool {
 	return true
 }
 
-func main() {
+func GetIntager() int {
 	in := bufio.NewReader(os.Stdin)
 	fmt.Print("input your start number: ")
 	a, err := in.ReadString('\n')
@@ -46,17 +46,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	bn := bufio.NewReader(os.Stdin)
-	fmt.Print("input your end number: ")
-	b, err := bn.ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
-	}
-	b = strings.TrimSpace(b)
-	n2, err := strconv.Atoi(b)
-	if err != nil {
-		log.Fatal(err)
-	}
+	return n1
+}
+
+func main() {
+	n1 := GetIntager()
+	n2 := GetIntager()
 	for j := n1; j <= n2; j++ {
 		if isPrime(j) {
 			fmt.Printf("%d is prime number.\n count : %d\n", j, counts)
