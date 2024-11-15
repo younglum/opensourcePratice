@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"reflect"
 
 	"github.com/headfirstgo/datafile"
 	"github.com/headfirstgo/keyboard"
@@ -32,6 +33,11 @@ func main() {
 	}
 	sampleCount := float64(len(numbers))
 	fmt.Printf("Average: %0.2f\n", sum/sampleCount)
+
+	var arrays [5]float64 = [5]float64{3.5, 4.1, 4.5, 5.0, 4.2}
+	arrays_slice := arrays[1:4] //슬라이스 생성
+	fmt.Println(arrays, reflect.TypeOf(arrays))
+	fmt.Println(arrays_slice, reflect.TypeOf(arrays_slice))
 
 	/*
 		var scores [3]int
