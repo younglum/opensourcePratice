@@ -3,7 +3,13 @@ package main
 import (
 	"fmt"
 	"os"
+	"reflect"
 )
+
+// func Test(strs string) { //하나밖에 못받음
+func Test(strs ...string) { //...은 가변매게변수를 처리할 때 사용,출력시 슬라이스 형태로 출력됨, 마지막 변수에만 사용가능
+	fmt.Println(strs, reflect.TypeOf(strs))
+}
 
 func main() {
 	//fmt.Println(os.Args[1:], len(os.Args))
@@ -14,6 +20,8 @@ func main() {
 	}
 	Slice = append(Slice, "Forever", "happy")
 	fmt.Printf("%s  %d", Slice, len(Slice))
+	Test("abc")
+	Test("a", "b")
 
 	/*
 		var emptySliace []bool
