@@ -18,7 +18,7 @@ func main() {
 	for _, slice := range Slice {
 		fmt.Println(slice)
 	}
-	Slice = append(Slice, "Forever", "happy")
+	Slice = append(Slice, "Forever", "happy") //append({슬라이스},{추가할 숫자 또는 문자}.......)
 	fmt.Printf("%s  %d", Slice, len(Slice))
 	Test("abc")
 	Test("a", "b")
